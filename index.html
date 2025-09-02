@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Positioning Demonstration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>CSS Positioning Visual Guide</h1>
+      <p>Scroll down to see different positioning behaviors in action!</p>
+    </header>
+
+    <!-- Static Positioning Demo -->
+    <section class="demo-section">
+      <h2>1. Static Positioning (Default)</h2>
+      <p>
+        Static elements follow the normal document flow. They ignore top, right,
+        bottom, left properties.
+      </p>
+      <div class="container">
+        <div class="box static-box">Static Box 1</div>
+        <div class="box static-box">Static Box 2</div>
+        <div class="box static-box">Static Box 3</div>
+      </div>
+    </section>
+
+    <!-- Relative Positioning Demo -->
+    <section class="demo-section">
+      <h2>2. Relative Positioning</h2>
+      <p>
+        Relative elements are positioned relative to their normal position.
+        Hover to see the effect!
+      </p>
+      <div class="container">
+        <div class="box">Normal Box</div>
+        <div class="box relative-box">Relative Box (Hover me!)</div>
+        <div class="box">Another Normal Box</div>
+      </div>
+    </section>
+
+    <!-- Absolute Positioning Demo -->
+    <section class="demo-section">
+      <h2>3. Absolute Positioning</h2>
+      <p>
+        Absolute elements are positioned relative to their nearest positioned
+        ancestor.
+      </p>
+      <div class="container relative-container">
+        <div class="box">Normal Box in Container</div>
+        <div class="box absolute-box">Absolute Box (Moving!)</div>
+        <div class="box">Another Normal Box</div>
+      </div>
+    </section>
+
+    <!-- Fixed Positioning Demo -->
+    <section class="demo-section">
+      <h2>4. Fixed Positioning</h2>
+      <p>
+        Fixed elements are positioned relative to the viewport. They stay in
+        place when scrolling.
+      </p>
+      <div class="container">
+        <div class="box">This box scrolls normally</div>
+        <div class="box">Another scrolling box</div>
+        <div class="box">More scrolling content</div>
+      </div>
+    </section>
+
+    <!-- Fixed element that demonstrates fixed positioning -->
+    <div class="fixed-box">Fixed Box - I stay here!</div>
+
+    <!-- Sticky Positioning Demo -->
+    <section class="demo-section">
+      <h2>5. Sticky Positioning</h2>
+      <p>
+        Sticky elements switch between relative and fixed positioning based on
+        scroll position.
+      </p>
+      <div class="sticky-container">
+        <div class="sticky-box">Sticky Box - Watch me stick to the top!</div>
+        <div class="content-box">
+          <p>Content that scrolls under the sticky element...</p>
+          <p>More content to demonstrate sticky behavior...</p>
+          <p>Keep scrolling to see the sticky element in action...</p>
+          <p>
+            The sticky element will stick to the top when it reaches the
+            threshold...
+          </p>
+          <p>And it will unstick when you scroll back up...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Controls -->
+    <section class="demo-section">
+      <h2>Interactive Demo</h2>
+      <p>Click the buttons to see positioning changes in real-time!</p>
+      <div class="controls">
+        <button onclick="changePosition('static')">Static</button>
+        <button onclick="changePosition('relative')">Relative</button>
+        <button onclick="changePosition('absolute')">Absolute</button>
+        <button onclick="changePosition('fixed')">Fixed</button>
+      </div>
+      <div class="interactive-container">
+        <div class="box">Reference Box 1</div>
+        <div class="box interactive-box" id="movableBox">Interactive Box</div>
+        <div class="box">Reference Box 2</div>
+      </div>
+    </section>
+
+    <!-- Extra content for scrolling demonstration -->
+    <section class="demo-section extra-content">
+      <h2>Extra Scrolling Content</h2>
+      <p>
+        This section provides extra content to demonstrate scrolling behavior...
+      </p>
+      <div class="filler-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>
+          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+        </p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation...</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate...</p>
+        <p>Excepteur sint occaecat cupidatat non proident...</p>
+      </div>
+    </section>
+
+    <script>
+      function changePosition(positionType) {
+        const box = document.getElementById("movableBox");
+        box.className = "box interactive-box";
+
+        switch (positionType) {
+          case "static":
+            box.style.position = "static";
+            box.style.top = "auto";
+            box.style.left = "auto";
+            break;
+          case "relative":
+            box.style.position = "relative";
+            box.style.top = "20px";
+            box.style.left = "30px";
+            break;
+          case "absolute":
+            box.style.position = "absolute";
+            box.style.top = "50px";
+            box.style.left = "100px";
+            break;
+          case "fixed":
+            box.style.position = "fixed";
+            box.style.top = "200px";
+            box.style.right = "20px";
+            box.style.left = "auto";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
